@@ -161,7 +161,7 @@ rev(v)
 	- ```vector[a:b]```: si $a$ y $b$ son dos números naturales, nos da el subvector con las entradas del vector original que van de la posición $a$-ésima hasta la $b$-ésima.
 	- ```vector[-i]```: si $i$ es un número, este subvector está formado por todas las entradas del vector original menos la entrada $i$-ésima. Si $i$ resulta ser un vector, entonces es un vector de índices y crea un nuevo vector con las entradas del vector original,cuyos índices pertenecen a $i$
 	- ```vector[-x]```: si $x$ es un vector (de índices), entonces este es el complementario de vector[$x$]
-	
+
 
 ## Subvectores
 

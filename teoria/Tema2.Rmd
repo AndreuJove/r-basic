@@ -469,10 +469,6 @@ No aparece
 
 \n
 
-```{r, echo = TRUE, message = TRUE}
-library(car)
-head(cars,3)
-```
 
 ## Parámetros de los chunks
 
