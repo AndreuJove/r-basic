@@ -1,0 +1,121 @@
+---
+title: "grafics_r"
+author: "Andreu"
+date: "1/22/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+***
+```{r}
+curve(3*x,-10,20, col = "blue",
+      ylab ="", xlab = "",
+      main = "2 rectas", 
+      sub = "Dos rectas con pendiente opuesta",
+      ylim =c(-60,60),
+      xlim = c(-10,20))
+
+curve(-3*x,-10,20, col ="green",
+      add = TRUE)
+
+legend(x=13,y=10,
+       legend = c(expression(3*x),expression(-3*x)),
+       col = c("blue","green"),
+       lty = 1)
+```
+
+
+## Plot function in R
+
+
+```{r primer_plot, fig.align="center"}
+
+students = c(1:10)
+marks = c(2,5,6,7,4,6,7,8,4,9)
+plot(students, marks)
+
+```
+
+
+
+## Parameters
+
+```{r, echo=FALSE, fig.cap="Primer plot ", fig.align="center"}
+
+n = 1:20
+
+fib = (1/sqrt(5))*((1+sqrt(5))/2)^n - (1/sqrt(5))*((1-sqrt(5))/2)^n
+fib
+
+# Determine the disposition of plots (rows, columns)
+par(mfrow = c(1,2))
+
+# First graph
+plot(fib, 
+     xlab="n", 
+     main="Sucesión de Fibonachi", 
+     log="y", ylab=expression(F[n]), 
+     pch=21, 
+     cex=2, 
+     col="orchid",
+     bg="blue")
+
+# Second graph
+plot(fib, 
+     xlab="n", 
+     main="Sucesión de Fibonachi", 
+     log="x", 
+     ylab=expression(F[n]), 
+     pch=21, 
+     cex=2, 
+     col="orchid",
+     bg="blue")
+
+# Close the disposition of plots to normal (rows, columns)
+par(mfrow = c(1,1))
+```
+
+```{r}
+x = (2*(1:20))
+y = (-1)^(1:20)*5*(1:20)
+plot(x,y, 
+     main = "Poniendo un punto y una recta", 
+     pch = 8, 
+     cex = 1, 
+     type = "b", 
+     lty = 4, 
+     lwd = 4, xaxp = c(0,40,2), yaxp = c(-100,100,8))
+points(20,0, col = "red", cex = 4, pch = 16)
+abline (h = 0, lty = 2, col = "dodgerblue")
+```
+
+
+### New elements to a plot
+```{r}
+
+f = function(x){
+        x^2 - 2*x + sqrt(abs(x))
+}
+
+plot(f, xlim= c(-10,10))
+points(0,0, pch=19)
+
+abline(v=-10:10, lty="dotted", col="grey")
+``` 
+
+
+```{r}
+f = function(x){x^2}
+plot(f, xlim= c(-4,4))
+lines(-3:3, )
+legend("bottomright",
+       lwd = 2,
+       legend = c(expression(x^2)), lty="dashed")
+
+```
+
+
+

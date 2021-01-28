@@ -106,10 +106,10 @@ Aquí tenéis una [lista de data frames](http://www.public.iastate.edu/~maitra/s
 ## Parámetros de read.table()
 
 ```{r}
-students = read.table("http://www.public.iastate.edu/~maitra/stat501/datasets/morel.dat", 
-  col.names = c("technicalDisciplines","aptitude","maths", "language",
-                "generalKnowledge"))
-head(students,8)
+# students = read.table("http://www.public.iastate.edu/~maitra/stat501/datasets/morel.dat", 
+#   col.names = c("technicalDisciplines","aptitude","maths", "language",
+#                 "generalKnowledge"))
+# head(students,8)
 ```
 
 

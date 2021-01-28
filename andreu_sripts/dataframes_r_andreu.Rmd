@@ -1,0 +1,85 @@
+---
+title: "dataframe"
+author: "Andreu"
+date: "1/26/2021"
+output: html_document
+---
+
+
+## Data frame de Iris
+```{r}
+df = iris
+# Show only the first 5 rows:
+head(df, 5)
+# Show only the last 6 rows:
+tail(df, 6)
+# Information about dataframe:
+str(df)
+# Columns:
+names(df)
+
+# Rows and columns:
+dimnames(df)
+
+# Dimension of the dataframe:
+dim(df)
+```
+
+## Reading dataframes => read.table()
+```{r}
+
+# header = FALSE -> first row is the columns
+# sep is the separation
+df_bulls = read.table("../data/bulls.dat",
+                      header = FALSE,
+                      col.names = c("breed", "sale_price", "shoulder",
+                                "fat_free", "percent_ff", "frame_scale",
+                                "back_fat", "sale_height", "sale_weight"),
+                      sep = ""
+                      )
+head(df_bulls)
+```
+
+
+## Load from URL
+```{r}
+
+## For https URL:
+#library(RCurl)
+## help.search("read")
+#read.table(textConnection(getURL("")))
+
+```
+
+
+```{r}
+write.table(df_bulls, file= "../data/bulls.txt")
+```
+
+
+## New dataframe
+```{r}
+
+gender = c("H", "M", "M", "M", "H")
+age = c(223,25,20,30,18)
+family = c(2,3,4,2,5)
+df5 = data.frame(genero = gender, edad = age, familia = family, stringsAsFactors =TRUE)
+head(df5)
+row.names(df5) = c("P1", "P2", "P3", "P4", "P5")
+
+```
+
+## Subdataframes
+```{r}
+#Filter rows with "M"
+df_m = df5[df5$genero=="M", ]
+
+# droplevels -> drop factors of previous df that doesnt appear in the new one
+df_m = droplevels(df_m)
+
+```
+
+
+
+
+
